@@ -1,7 +1,7 @@
-import { defineConfig } from '@pandacss/dev'
-import presetPanda from '@pandacss/preset-panda'
-import { myMonorepoPreset } from '@my-monorepo/preset'
-import { buttonPreset } from '@my-monorepo/button/preset'
+import { defineConfig } from "@pandacss/dev";
+import presetPanda from "@pandacss/preset-panda";
+import { myMonorepoPreset } from "@my-monorepo/preset";
+import { buttonPreset } from "@my-monorepo/button/preset";
 
 export default defineConfig({
   presets: [presetPanda, myMonorepoPreset, buttonPreset],
@@ -9,14 +9,14 @@ export default defineConfig({
   preflight: true,
   // Where to look for your css declarations
   include: [
-    './src/**/*.{js,jsx,ts,tsx}',
-    './pages/**/*.{js,jsx,ts,tsx}',
-    './stories/**/*.{js,jsx,ts,tsx}',
+    "./src/**/*.{ts,astro}",
+    "./pages/**/*.{ts,astro}",
+    "./stories/**/*.{ts,astro}",
     // if you remove this one, the `SomeComponent` styles will be missing in the final css
-    './node_modules/@my-monorepo/some-component/dist/panda.json',
+    "./node_modules/@my-monorepo/some-component/dist/panda.json",
     // this one is unnecessary since no `css` function (or style props etc) is directly used in this package
     // but including it should not hurt and would make it future-proof
-    './node_modules/@my-monorepo/button/dist/panda.json',
+    "./node_modules/@my-monorepo/button/dist/panda.json",
   ],
 
   // Files to exclude
@@ -27,14 +27,14 @@ export default defineConfig({
     extend: {
       tokens: {
         colors: {
-          specificColorFromWebApp: { value: '#262626' },
+          specificColorFromWebApp: { value: "#262626" },
         },
       },
     },
   },
 
   // The output directory for your css system
-  outdir: '@my-monorepo/ui-lib',
+  outdir: "@my-monorepo/ui-lib",
   emitPackage: true,
-  jsxFramework: 'react',
-})
+  jsxFramework: "react",
+});

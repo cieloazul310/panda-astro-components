@@ -1,1 +1,1 @@
-export * from './button'
+export { default as Button, type Props as ButtonProps } from "./button.astro";

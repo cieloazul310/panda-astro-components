@@ -1,0 +1,20 @@
+---
+import { cx } from "@my-monorepo/ui-lib/css";
+import {
+  ShadcnButtonVariantProps,
+  shadcnButton,
+} from "@my-monorepo/ui-lib/recipes";
+import { type HTMLStyledProps } from "@my-monorepo/ui-lib/jsx";
+
+export interface Props extends HTMLStyledProps<"button">, ShadcnButtonVariantProps {}
+
+const { className, variant, size, ...props } = Astro.props;
+---
+
+<button
+  data-scope="shadcn-button"
+  data-part="root"
+  class={cx(className, shadcnButton({ variant, size }))}
+  {...props}>
+  <slot />
+</button>

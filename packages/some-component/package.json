@@ -1,9 +1,12 @@
 {
   "name": "@my-monorepo/some-component",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "files": [
+    "src"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -11,25 +14,21 @@
     "reset": "rimraf node_modules && rimraf dist",
     "codegen": "panda codegen --clean",
     "build": "tsup src/index.ts --dts --format=esm,cjs --clean --dts --external @pandacss/dev --external @my-monorepo/ui-lib",
-    "dev": "pnpm build --watch",
-    "preview": "vite",
-    "ship": "panda ship src/**/*.tsx --outfile dist/panda.json",
-    "build-ship": "pnpm build && pnpm ship"
+    "dev": "npm build --watch",
+    "ship": "panda ship src/**/*.astro --outfile src/panda.json",
+    "build-ship": "npm build && npm ship"
   },
   "dependencies": {
-    "@ark-ui/react": "^0.6.0",
-    "@my-monorepo/preset": "workspace:^",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@my-monorepo/preset": "^0.0.1"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.3.2",
-    "@pandacss/preset-panda": "^0.3.2",
-    "@pandacss/types": "^0.3.2",
-    "@types/react": "^18.0.37",
-    "@types/react-dom": "^18.0.11",
-    "lucide-react": "^0.246.0",
-    "vite": "^4.3.9",
-    "vite-plugin-dts": "^2.3.0"
+    "@pandacss/dev": "^0.15.1",
+    "@pandacss/preset-panda": "^0.15.1",
+    "@pandacss/types": "^0.15.1",
+    "astro": "^3.1.1"
+  },
+  "peerDependencies": {
+    "@pandacss/dev": "^0.13.0",
+    "astro": "^3.0.0"
   }
 }

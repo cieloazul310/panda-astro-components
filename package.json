@@ -1,8 +1,18 @@
 {
+	"name": "panda-astro-components",
+	"private": true,
+	"workspaces": [
+		"./apps/*",
+		"./packages/*"
+	],
+	"scripts": {
+		"format": "prettier \"{apps,packages}/**/*.{js,cjs,ts,astro}\" --write"
+	},
 	"devDependencies": {
-		"publint": "^0.1.12",
+		"prettier": "^3.0.3",
+		"prettier-plugin-astro": "^0.12.0",
 		"rimraf": "^5.0.1",
-		"tsup": "^7.0.0",
-		"typescript": "^5.0.2"
+		"tsup": "^7.2.0",
+		"typescript": "^5.2.2"
 	}
 }

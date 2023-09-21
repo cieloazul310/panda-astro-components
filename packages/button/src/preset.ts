@@ -1,6 +1,5 @@
-import { definePreset } from '@pandacss/dev'
-import type { Preset } from '@pandacss/types'
-import { shadcnButton } from './button.recipe'
+import { definePreset } from "@pandacss/dev";
+import { shadcnButton } from "./button.recipe";
 
 export const buttonPreset = definePreset({
   theme: {
@@ -8,4 +7,4 @@ export const buttonPreset = definePreset({
       recipes: { shadcnButton },
     },
   },
-}) as Preset
+});

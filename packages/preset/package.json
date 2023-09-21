@@ -1,8 +1,11 @@
 {
   "name": "@my-monorepo/preset",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -10,12 +13,12 @@
     "reset": "rimraf node_modules && rimraf dist",
     "codegen": "panda codegen --clean",
     "build": "tsup src/index.ts --dts --format=esm,cjs --clean --dts --external @pandacss/dev",
-    "dev": "pnpm build --watch"
-  },
-  "dependencies": {
-    "@pandacss/dev": "^0.3.2"
+    "dev": "npm build --watch"
   },
   "devDependencies": {
-    "@pandacss/types": "^0.3.2"
+    "@pandacss/types": "^0.15.1"
+  },
+  "peerDependencies": {
+    "@pandacss/dev": "^0.13.0"
   }
 }
