@@ -13,7 +13,8 @@
   "scripts": {
     "reset": "rimraf node_modules && rimraf dist",
     "codegen": "panda codegen --clean",
-    "ship": "panda ship src/**/*.astro --outfile src/panda.json"
+    "ship": "panda ship src/**/*.astro --outfile src/panda.json",
+    "prepare": "npm run codegen && npm run ship"
   },
   "dependencies": {
     "@my-monorepo/preset": "^0.0.1"

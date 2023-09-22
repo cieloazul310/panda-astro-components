@@ -14,7 +14,8 @@
     "reset": "rimraf node_modules && rimraf dist",
     "codegen": "panda codegen --clean",
     "build": "tsup src/index.ts --dts --format=esm,cjs --clean --dts --external @pandacss/dev",
-    "dev": "npm build --watch"
+    "dev": "npm build --watch",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.15.1"

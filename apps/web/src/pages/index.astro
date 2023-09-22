@@ -1,7 +1,7 @@
 ---
 import { css } from "@my-monorepo/ui-lib/css";
 import { Button } from "@my-monorepo/button";
-import { SomeComponent } from "@my-monorepo/some-component";
+import { SomeComponent, UsePresetToken } from "@my-monorepo/some-component";
 import Layout from "../layout/index.astro";
 ---
 <Layout>
@@ -9,4 +9,7 @@ import Layout from "../layout/index.astro";
   <Button visual="edgy">Edgy</Button>
   <Button visual="funky">Funky</Button>
   <SomeComponent />
+  <UsePresetToken>
+    <p>Hi, bel canto.</p>
+  </UsePresetToken>
 </Layout>

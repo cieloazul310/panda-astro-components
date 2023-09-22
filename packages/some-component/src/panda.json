@@ -34,6 +34,25 @@
           "fontSize": "xs"
         }
       ]
+    },
+    {
+      "type": "object",
+      "name": "css",
+      "box": {
+        "type": "map",
+        "value": {},
+        "node": "CallExpression",
+        "line": 4,
+        "column": 13
+      },
+      "data": [
+        {
+          "bg": "shadcn.muted",
+          "color": "shadcn.primary",
+          "p": 8,
+          "rounded": "xl"
+        }
+      ]
     }
   ],
   "cva": [],

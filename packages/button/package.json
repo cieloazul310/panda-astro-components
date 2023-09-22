@@ -31,7 +31,8 @@
     "build": "tsup src/preset.ts --format=esm,cjs --clean --dts --external @my-monorepo/ui-lib",
     "dev": "npm build --watch",
     "ship": "panda ship src/**/*.astro --outfile dist/panda.json",
-    "build-ship": "npm build && npm ship"
+    "build-ship": "npm run build && npm run ship",
+    "prepare": "npm run codegen && npm run build-ship"
   },
   "dependencies": {
     "@my-monorepo/preset": "^0.0.1"
