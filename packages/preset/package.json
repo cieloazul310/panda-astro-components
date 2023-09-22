@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -16,7 +17,7 @@
     "dev": "npm build --watch"
   },
   "devDependencies": {
-    "@pandacss/types": "^0.15.1"
+    "@pandacss/dev": "^0.15.1"
   },
   "peerDependencies": {
     "@pandacss/dev": "^0.13.0"

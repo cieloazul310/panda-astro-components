@@ -1,0 +1,12 @@
+---
+import { css } from "@my-monorepo/ui-lib/css";
+import { Button } from "@my-monorepo/button";
+import { SomeComponent } from "@my-monorepo/some-component";
+import Layout from "../layout/index.astro";
+---
+<Layout>
+  <p class={css({ bg: "blue.100" })}>Hello, Astro!</p>
+  <Button visual="edgy">Edgy</Button>
+  <Button visual="funky">Funky</Button>
+  <SomeComponent />
+</Layout>

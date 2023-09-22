@@ -1,5 +1,4 @@
 import { definePreset } from "@pandacss/dev";
-import type { Preset } from "@pandacss/types";
 import { semanticTokens } from "./semantic-tokens";
 
 export const myMonorepoPreset = definePreset({
@@ -20,4 +19,4 @@ export const myMonorepoPreset = definePreset({
       },
     },
   },
-}) as Preset;
+});

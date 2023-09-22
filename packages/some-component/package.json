@@ -13,10 +13,7 @@
   "scripts": {
     "reset": "rimraf node_modules && rimraf dist",
     "codegen": "panda codegen --clean",
-    "build": "tsup src/index.ts --dts --format=esm,cjs --clean --dts --external @pandacss/dev --external @my-monorepo/ui-lib",
-    "dev": "npm build --watch",
-    "ship": "panda ship src/**/*.astro --outfile src/panda.json",
-    "build-ship": "npm build && npm ship"
+    "ship": "panda ship src/**/*.astro --outfile src/panda.json"
   },
   "dependencies": {
     "@my-monorepo/preset": "^0.0.1"

@@ -1,7 +1,7 @@
 import { defineConfig } from "@pandacss/dev";
 import presetPanda from "@pandacss/preset-panda";
 import { myMonorepoPreset } from "@my-monorepo/preset";
-import { shadcnButton } from "./src/button.recipe";
+import { buttonRecipe } from "./src/button.recipe";
 
 export default defineConfig({
   presets: [myMonorepoPreset, presetPanda],
@@ -9,7 +9,7 @@ export default defineConfig({
   preflight: true,
 
   // Where to look for your css declarations
-  include: ["./src/**/*.{ts,astro}", "./demo/**/*.{ts,astro}"],
+  include: ["./src/**/*.{ts,astro}"],
 
   // Files to exclude
   exclude: [],
@@ -17,12 +17,11 @@ export default defineConfig({
   // Useful for theme customization
   theme: {
     extend: {
-      recipes: { shadcnButton },
+      recipes: { buttonRecipe },
     },
   },
 
   // The output directory for your css system
   outdir: "@my-monorepo/ui-lib",
   emitPackage: true,
-  jsxFramework: "react",
 });
