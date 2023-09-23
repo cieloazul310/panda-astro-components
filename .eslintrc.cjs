@@ -1,7 +1,6 @@
 module.exports = {
-  extends: "../../.eslintrc.cjs",
+  extends: ["custom"],
   parserOptions: {
-    tsconfigRootDir: __dirname,
     project: "./tsconfig.json",
   },
 };

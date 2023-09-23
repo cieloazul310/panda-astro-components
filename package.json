@@ -1,18 +1,30 @@
 {
-	"name": "panda-astro-components",
-	"private": true,
-	"workspaces": [
-		"./apps/*",
-		"./packages/*"
-	],
-	"scripts": {
-		"format": "prettier \"{apps,packages}/**/*.{js,cjs,ts,astro}\" --write"
-	},
-	"devDependencies": {
-		"prettier": "^3.0.3",
-		"prettier-plugin-astro": "^0.12.0",
-		"rimraf": "^5.0.1",
-		"tsup": "^7.2.0",
-		"typescript": "^5.2.2"
-	}
+  "name": "panda-astro-components",
+  "private": true,
+  "workspaces": [
+    "./apps/*",
+    "./packages/*"
+  ],
+  "scripts": {
+    "lint-staged": "lint-staged",
+    "format": "prettier \"{apps,packages}/**/*.{js,cjs,ts,astro}\" --write",
+    "prepare": "git config --local core.hooksPath .githooks"
+  },
+  "devDependencies": {
+    "@my-monorepo/tsconfig": "^0.0.1",
+    "eslint": "^8.50.0",
+    "eslint-config-custom": "^0.0.1",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0",
+    "rimraf": "^5.0.1",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "lint-staged": {
+    "{apps/packages}/**/*.{js,cjs,ts,astro}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
 }

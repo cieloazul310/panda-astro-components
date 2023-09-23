@@ -1,7 +1,4 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "jsx": "react-jsx"
-  },
-  "include": ["src"]
+  "extends": "../../tsconfig.build.json",
+  "include": ["src", "panda.config.ts", ".eslintrc.cjs"]
 }

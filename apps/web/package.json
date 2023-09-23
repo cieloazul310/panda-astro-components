@@ -22,6 +22,6 @@
     "@pandacss/astro": "^0.15.1",
     "@pandacss/dev": "^0.15.1",
     "@pandacss/preset-panda": "^0.15.1",
-    "typescript": "^5.0.2"
+    "typescript": "^5.2.2"
   }
 }

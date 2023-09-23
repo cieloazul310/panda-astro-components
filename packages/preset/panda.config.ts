@@ -5,7 +5,7 @@ export default defineConfig({
   preflight: true,
 
   // Where to look for your css declarations
-  include: ["./src/**/*.{ts,astro}", "./pages/**/*.{ts,astro}"],
+  include: ["./src/**/*.{ts,astro}"],
 
   // Files to exclude
   exclude: [],

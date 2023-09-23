@@ -1,0 +1,21 @@
+{
+  "name": "eslint-config-custom",
+  "private": true,
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.cjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-astro": "^0.29.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  }
+}
