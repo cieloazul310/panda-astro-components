@@ -6,8 +6,8 @@
     "./packages/*"
   ],
   "scripts": {
-    "lint-staged": "lint-staged",
     "format": "prettier \"{apps,packages}/**/*.{js,cjs,ts,astro}\" --write",
+    "lint-staged": "lint-staged",
     "prepare": "git config --local core.hooksPath .githooks"
   },
   "devDependencies": {
@@ -23,7 +23,6 @@
   },
   "lint-staged": {
     "{apps,packages}/**/*.{js,cjs,ts,astro}": [
-      "eslint --fix",
       "prettier --write"
     ]
   }
