@@ -23,6 +23,7 @@
   },
   "lint-staged": {
     "{apps,packages}/**/*.{js,mjs,cjs,ts,astro}": [
+      "eslint --fix",
       "prettier --write"
     ]
   }
