@@ -5,8 +5,8 @@ module.exports = {
     node: true,
   },
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
+    "airbnb-base",
+    "airbnb-typescript/base",
     "plugin:astro/recommended",
     "prettier",
   ],
@@ -18,6 +18,9 @@ module.exports = {
       parserOptions: {
         parser: "@typescript-eslint/parser",
         extraFileExtensions: [".astro"],
+      },
+      rules: {
+        "import/no-extraneous-dependencies": "off",
       },
     },
   ],

@@ -1,7 +1,7 @@
 import { defineConfig } from "@pandacss/dev";
 import presetPanda from "@pandacss/preset-panda";
-import { myMonorepoPreset } from "@my-monorepo/preset";
-import { buttonPreset } from "@my-monorepo/button/preset";
+import myMonorepoPreset from "@my-monorepo/preset";
+import buttonPreset from "@my-monorepo/button/preset";
 
 export default defineConfig({
   presets: [presetPanda, myMonorepoPreset, buttonPreset],

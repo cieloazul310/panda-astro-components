@@ -1,4 +1,1 @@
-{
-  "extends": "@my-monorepo/tsconfig/astro",
-  "include": [".eslintrc.cjs"]
-}
+{}

@@ -1,4 +1,4 @@
 {
-  "extends": "../../tsconfig.build.json",
+  "extends": "@my-monorepo/tsconfig/build",
   "include": ["src", ".eslintrc.cjs", "panda.config.ts"]
 }

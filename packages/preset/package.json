@@ -12,13 +12,15 @@
   "license": "ISC",
   "scripts": {
     "reset": "rimraf node_modules && rimraf dist",
-    "codegen": "panda codegen --clean",
     "build": "tsup src/index.ts --dts --format=esm,cjs --clean --dts --external @pandacss/dev",
     "dev": "npm build --watch",
     "prepare": "npm run build"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.15.1"
+    "@my-monorepo/tsconfig": "^0.0.1",
+    "@pandacss/dev": "^0.15.1",
+    "eslint": "^8.50.0",
+    "eslint-config-custom": "^0.0.1"
   },
   "peerDependencies": {
     "@pandacss/dev": "^0.13.0"

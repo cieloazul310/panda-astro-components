@@ -19,9 +19,12 @@
     "astro": "^3.1.1"
   },
   "devDependencies": {
+    "@my-monorepo/tsconfig": "^0.0.1",
     "@pandacss/astro": "^0.15.1",
     "@pandacss/dev": "^0.15.1",
     "@pandacss/preset-panda": "^0.15.1",
+    "eslint": "^8.50.0",
+    "eslint-config-custom": "^0.0.1",
     "typescript": "^5.2.2"
   }
 }
