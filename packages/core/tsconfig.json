@@ -1,0 +1,4 @@
+{
+  "extends": "@my-monorepo/tsconfig/build",
+  "include": ["src"]
+}

@@ -8,15 +8,9 @@ module.exports = {
   ignorePatterns: ["dist"],
   overrides: [
     {
-      files: ["panda.config.ts"],
-      rules: {
-        "import/no-extraneous-dependencies": "off",
-      },
-    },
-    {
       files: ["src/preset.ts"],
       rules: {
-        "import/prefer-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
       },
     },
   ],

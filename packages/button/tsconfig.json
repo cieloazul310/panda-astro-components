@@ -1,4 +1,11 @@
 {
-  "extends": "@my-monorepo/tsconfig/build",
-  "include": ["src", "panda.config.ts", ".eslintrc.cjs"]
+  "extends": "@my-monorepo/tsconfig/astro",
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true,
+    "allowImportingTsExtensions": false,
+    "noEmit": false,
+    "types": ["../../types.d.ts"]
+  },
+  "include": ["src/index.ts"]
 }

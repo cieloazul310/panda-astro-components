@@ -3,8 +3,9 @@ module.exports = {
   extends: ["custom"],
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: "./tsconfig.json",
+    project: "./tsconfig.eslint.json",
   },
+  ignorePatterns: ["dist"],
   overrides: [
     {
       files: ["panda.config.ts"],
