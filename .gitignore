@@ -28,3 +28,5 @@ panda-static
 !packages/studio/styled-system
 packages/studio/src/lib/analysis.json
 storybook-static
+
+.turbo
