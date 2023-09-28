@@ -3,7 +3,7 @@ import presetPanda from "@pandacss/preset-panda";
 import myMonorepoPreset from "@my-monorepo/preset-base";
 
 export default defineConfig({
-  presets: [myMonorepoPreset, presetPanda],
+  presets: [presetPanda, myMonorepoPreset],
   // Whether to use css reset
   preflight: true,
 

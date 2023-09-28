@@ -2,7 +2,6 @@
   "name": "@my-monorepo/button",
   "version": "0.0.1",
   "description": "",
-  "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -12,8 +11,8 @@
     },
     "./preset": {
       "types": "./dist/preset.d.ts",
-      "import": "./dist/preset.js",
-      "require": "./dist/preset.cjs"
+      "import": "./dist/preset.mjs",
+      "require": "./dist/preset.js"
     },
     "./panda.json": {
       "import": "./dist/panda.json",
@@ -42,9 +41,9 @@
   },
   "devDependencies": {
     "@my-monorepo/tsconfig": "^0.0.1",
-    "@pandacss/dev": "^0.15.1",
-    "@pandacss/preset-panda": "^0.15.1",
-    "@pandacss/types": "^0.15.1",
+    "@pandacss/dev": "^0.15.2",
+    "@pandacss/preset-panda": "^0.15.2",
+    "@pandacss/types": "^0.15.2",
     "astro": "^3.1.1",
     "eslint": "^8.50.0",
     "eslint-config-custom": "^0.0.1"

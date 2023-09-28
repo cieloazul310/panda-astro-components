@@ -25,6 +25,7 @@
     "build": "tsc && cp src/*.astro dist",
     "codegen": "panda codegen --clean",
     "ship": "panda ship src/**/*.astro --outfile dist/panda.json",
+    "build-ship": "npm run build && npm run ship",
     "prepare": "npm run codegen && npm run build && npm run ship"
   },
   "dependencies": {
@@ -32,9 +33,9 @@
   },
   "devDependencies": {
     "@my-monorepo/tsconfig": "^0.0.1",
-    "@pandacss/dev": "^0.15.1",
-    "@pandacss/preset-panda": "^0.15.1",
-    "@pandacss/types": "^0.15.1",
+    "@pandacss/dev": "^0.15.2",
+    "@pandacss/preset-panda": "^0.15.2",
+    "@pandacss/types": "^0.15.2",
     "astro": "^3.1.1",
     "eslint": "^8.50.0",
     "eslint-config-custom": "^0.0.1"

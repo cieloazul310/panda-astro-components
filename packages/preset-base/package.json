@@ -11,14 +11,14 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "reset": "rimraf node_modules && rimraf dist",
-    "build": "tsup src/index.ts --dts --format=esm,cjs --clean --dts --external @pandacss/dev",
+    "clean": "rimraf node_modules && rimraf dist",
+    "build:preset-base": "tsup src/index.ts --dts --format=esm,cjs --clean --dts --external @pandacss/dev",
     "dev": "npm build --watch",
     "prepare": "npm run build"
   },
   "devDependencies": {
     "@my-monorepo/tsconfig": "^0.0.1",
-    "@pandacss/dev": "^0.15.1",
+    "@pandacss/dev": "^0.15.2",
     "eslint": "^8.50.0",
     "eslint-config-custom": "^0.0.1"
   },

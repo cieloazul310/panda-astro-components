@@ -2,12 +2,17 @@
   "name": "@my-monorepo/core",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/index.ts",
-  "types": "dist/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.ts",
-      "import": "./dist/index.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./ship": {
+      "types": "./dist/ship.d.ts",
+      "import": "./dist/ship.js",
+      "require": "./dist/ship.js"
     },
     "./preset": {
       "types": "./dist/preset.d.ts",
@@ -19,8 +24,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts src/preset.ts --format=esm,cjs --clean --dts --external @pandacss/dev",
-    "build:index": "mkdir dist && cp src/index.ts dist",
+    "build": "npm run build:preset && npm run build:index && npm run build:ship",
+    "build:index": "tsc",
+    "build:ship": "tsup src/ship.ts --format=cjs --dts",
     "build:preset": "tsup src/preset.ts --format=esm,cjs --dts --external @pandacss/dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

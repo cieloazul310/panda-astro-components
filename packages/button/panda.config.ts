@@ -4,7 +4,7 @@ import myMonorepoPreset from "@my-monorepo/preset-base";
 import buttonRecipe from "./src/button.recipe";
 
 export default defineConfig({
-  presets: [myMonorepoPreset, presetPanda],
+  presets: [presetPanda, myMonorepoPreset],
   // Whether to use css reset
   preflight: true,
 
