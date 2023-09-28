@@ -1,5 +1,4 @@
 import { defineConfig } from "@pandacss/dev";
-// import ship from "@my-monorepo/core/ship";
 import preset from "@my-monorepo/core/preset";
 
 export default defineConfig({

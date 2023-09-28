@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "turbo": "turbo",
-    "build": "turbo run build:preset-base codegen build-ship",
+    "build": "turbo run build:preset-base codegen build-ship build:core",
     "format": "prettier \"{apps,packages}/**/*.{js,cjs,ts,astro}\" --write",
     "lint-staged": "lint-staged",
     "prepare": "git config --local core.hooksPath .githooks"

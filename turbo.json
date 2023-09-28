@@ -12,6 +12,11 @@
       "dependsOn": ["codegen"],
       "inputs": ["src"],
       "outputs": ["dist"]
+    },
+    "build:core": {
+      "dependsOn": ["build-ship"],
+      "inputs": ["src"],
+      "outputs": ["dist"]
     }
   }
 }
