@@ -1,7 +1,11 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "@my-monorepo/tsconfig/astro",
   "compilerOptions": {
-    "jsx": "react-jsx"
+    "outDir": "dist",
+    "declaration": true,
+    "allowImportingTsExtensions": false,
+    "noEmit": false,
+    "types": ["../../types.d.ts"]
   },
   "include": ["src"]
 }

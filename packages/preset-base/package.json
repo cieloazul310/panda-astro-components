@@ -1,0 +1,34 @@
+{
+  "name": "@my-monorepo/preset-base",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rimraf node_modules && rimraf dist",
+    "build:preset-base": "tsup src/index.ts --dts --format=esm,cjs --clean --dts --external @pandacss/dev",
+    "prepare": "npm run build:preset-base"
+  },
+  "devDependencies": {
+    "@my-monorepo/tsconfig": "^0.0.1",
+    "@pandacss/dev": "^0.15.3",
+    "eslint": "^8.50.0",
+    "eslint-config-custom": "^0.0.1"
+  },
+  "peerDependencies": {
+    "@pandacss/dev": "^0.13.0"
+  }
+}

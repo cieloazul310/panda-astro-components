@@ -1,5 +1,6 @@
 ---
 import { css } from "@my-monorepo/ui-lib/css";
+import { vstack } from "@my-monorepo/ui-lib/patterns";
 ---
 
 <!doctype html>
@@ -10,10 +11,10 @@ import { css } from "@my-monorepo/ui-lib/css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    </head>
+  </head>
   <body>
     <div class={css({ maxWidth: "breakpoint-md", m: "auto" })}>
-      <main class={css({ p: 4 })}>
+      <main class={vstack({ gap: 4, alignItems: "stretch", p: 4 })}>
         <slot />
       </main>
     </div>

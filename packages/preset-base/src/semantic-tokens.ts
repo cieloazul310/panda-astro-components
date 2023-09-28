@@ -1,7 +1,7 @@
 import { defineSemanticTokens } from "@pandacss/dev";
 
 /** @see https://ui.shadcn.com/docs/theming */
-export const semanticTokens = defineSemanticTokens({
+const semanticTokens = defineSemanticTokens({
   colors: {
     shadcn: {
       background: {
@@ -101,3 +101,5 @@ export const semanticTokens = defineSemanticTokens({
     },
   },
 });
+
+export default semanticTokens;

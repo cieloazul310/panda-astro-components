@@ -1,0 +1,47 @@
+{
+  "name": "@my-monorepo/core",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./ship": {
+      "types": "./dist/ship.d.ts",
+      "import": "./dist/ship.js",
+      "require": "./dist/ship.js"
+    },
+    "./preset": {
+      "types": "./dist/preset.d.ts",
+      "import": "./dist/preset.mjs",
+      "require": "./dist/preset.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run build:preset && npm run build:index && npm run build:ship",
+    "build:index": "tsc",
+    "build:ship": "tsup src/ship.ts --format=cjs --dts",
+    "build:preset": "tsup src/preset.ts --format=esm,cjs --dts --external @pandacss/dev --external @my-monorepo/preset-base --external @my-monorepo/button",
+    "build:core": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@my-monorepo/button": "^0.0.1",
+    "@my-monorepo/preset-base": "^0.0.1",
+    "@my-monorepo/some-component": "^0.0.1"
+  },
+  "devDependencies": {
+    "@my-monorepo/tsconfig": "^0.0.1",
+    "@pandacss/dev": "^0.15.3",
+    "eslint": "^8.50.0",
+    "eslint-config-custom": "^0.0.1"
+  }
+}

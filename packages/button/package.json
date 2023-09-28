@@ -2,25 +2,25 @@
   "name": "@my-monorepo/button",
   "version": "0.0.1",
   "description": "",
-  "type": "module",
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "import": "./src/index.ts",
-      "require": "./src/index.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
     "./preset": {
       "types": "./dist/preset.d.ts",
-      "import": "./dist/preset.js",
-      "require": "./dist/preset.cjs"
+      "import": "./dist/preset.mjs",
+      "require": "./dist/preset.js"
+    },
+    "./panda.json": {
+      "import": "./dist/panda.json",
+      "require": "./dist/panda.json"
     }
   },
   "files": [
-    "src",
-    "dist",
-    "index.ts"
+    "dist"
   ],
   "keywords": [],
   "author": "",
@@ -28,20 +28,22 @@
   "scripts": {
     "reset": "rimraf node_modules && rimraf dist",
     "codegen": "panda codegen --clean",
-    "build": "tsup src/preset.ts --format=esm,cjs --clean --dts --external @my-monorepo/ui-lib",
-    "dev": "npm build --watch",
+    "build": "npm run build:preset && npm run build:component",
+    "build:component": "tsc && cp src/*.astro dist",
+    "build:preset": "tsup src/preset.ts --format=esm,cjs --clean --dts --external @pandacss/dev --external @my-monorepo/preset-base",
     "ship": "panda ship src/**/*.astro --outfile dist/panda.json",
     "build-ship": "npm run build && npm run ship",
     "prepare": "npm run codegen && npm run build-ship"
   },
   "dependencies": {
-    "@my-monorepo/preset": "^0.0.1"
+    "@my-monorepo/preset-base": "^0.0.1"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.15.1",
-    "@pandacss/preset-panda": "^0.15.1",
-    "@pandacss/types": "^0.15.1",
-    "astro": "^3.1.1"
+    "@my-monorepo/tsconfig": "^0.0.1",
+    "@pandacss/dev": "^0.15.3",
+    "astro": "^3.1.4",
+    "eslint": "^8.50.0",
+    "eslint-config-custom": "^0.0.1"
   },
   "peerDependencies": {
     "@pandacss/dev": "^0.13.0",

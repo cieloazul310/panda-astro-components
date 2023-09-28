@@ -1,10 +1,12 @@
 import { definePreset } from "@pandacss/dev";
-import { buttonRecipe } from "./button.recipe";
+import buttonRecipe from "./button.recipe";
 
-export const buttonPreset = definePreset({
+const buttonPreset = definePreset({
   theme: {
     extend: {
       recipes: { buttonRecipe },
     },
   },
 });
+
+export default buttonPreset;

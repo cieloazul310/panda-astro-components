@@ -4,8 +4,7 @@
     "outDir": "dist",
     "declaration": true,
     "allowImportingTsExtensions": false,
-    "noEmit": false,
-    "types": ["../../types.d.ts"]
+    "noEmit": false
   },
   "include": ["src/index.ts"]
 }

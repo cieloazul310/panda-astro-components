@@ -1,7 +1,7 @@
 import { definePreset } from "@pandacss/dev";
-import { semanticTokens } from "./semantic-tokens";
+import semanticTokens from "./semantic-tokens";
 
-export const myMonorepoPreset = definePreset({
+const myMonorepoPreset = definePreset({
   theme: {
     extend: {
       tokens: {
@@ -20,3 +20,5 @@ export const myMonorepoPreset = definePreset({
     },
   },
 });
+
+export default myMonorepoPreset;

@@ -1,7 +1,4 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "jsx": "react-jsx"
-  },
-  "include": ["src"]
+  "extends": "@my-monorepo/tsconfig/astro",
+  "include": ["src", "panda.config.ts", "astro.config.mjs", ".eslintrc.cjs"]
 }
