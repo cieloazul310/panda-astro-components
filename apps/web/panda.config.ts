@@ -1,10 +1,9 @@
 import { defineConfig } from "@pandacss/dev";
-import presetPanda from "@pandacss/preset-panda";
 // import ship from "@my-monorepo/core/ship";
 import preset from "@my-monorepo/core/preset";
 
 export default defineConfig({
-  presets: [presetPanda, preset],
+  presets: ["@pandacss/preset-panda", preset],
   // Whether to use css reset
   preflight: true,
   // Where to look for your css declarations

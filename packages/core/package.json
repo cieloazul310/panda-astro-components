@@ -27,7 +27,7 @@
     "build": "npm run build:preset && npm run build:index && npm run build:ship",
     "build:index": "tsc",
     "build:ship": "tsup src/ship.ts --format=cjs --dts",
-    "build:preset": "tsup src/preset.ts --format=esm,cjs --dts --external @pandacss/dev",
+    "build:preset": "tsup src/preset.ts --format=esm,cjs --dts --external @pandacss/dev --external @my-monorepo/preset-base --external @my-monorepo/button",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@my-monorepo/tsconfig": "^0.0.1",
-    "@pandacss/dev": "^0.15.1",
+    "@pandacss/dev": "^0.15.3",
     "eslint": "^8.50.0",
     "eslint-config-custom": "^0.0.1"
   }

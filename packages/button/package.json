@@ -30,8 +30,7 @@
     "codegen": "panda codegen --clean",
     "build": "npm run build:preset && npm run build:component",
     "build:component": "tsc && cp src/*.astro dist",
-    "build:preset": "tsup src/preset.ts --format=esm,cjs --clean --dts --external @my-monorepo/ui-lib",
-    "dev": "npm build --watch",
+    "build:preset": "tsup src/preset.ts --format=esm,cjs --clean --dts --external @pandacss/dev --external @my-monorepo/preset-base",
     "ship": "panda ship src/**/*.astro --outfile dist/panda.json",
     "build-ship": "npm run build && npm run ship",
     "prepare": "npm run codegen && npm run build-ship"
@@ -41,10 +40,8 @@
   },
   "devDependencies": {
     "@my-monorepo/tsconfig": "^0.0.1",
-    "@pandacss/dev": "^0.15.2",
-    "@pandacss/preset-panda": "^0.15.2",
-    "@pandacss/types": "^0.15.2",
-    "astro": "^3.1.1",
+    "@pandacss/dev": "^0.15.3",
+    "astro": "^3.1.4",
     "eslint": "^8.50.0",
     "eslint-config-custom": "^0.0.1"
   },
