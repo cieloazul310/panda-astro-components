@@ -7,7 +7,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["astro.config.mjs", "panda.config.ts"],
+      files: ["astro.config.ts", "panda.config.ts"],
       rules: {
         "import/no-extraneous-dependencies": "off",
       },
