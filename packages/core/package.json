@@ -28,7 +28,6 @@
     "build:index": "tsc",
     "build:ship": "tsup src/ship.ts --format=cjs --dts",
     "build:preset": "tsup src/preset.ts --format=esm,cjs --dts --external @pandacss/dev --external @my-monorepo/preset-base --external @my-monorepo/button",
-    "build:core": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

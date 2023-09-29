@@ -19,6 +19,13 @@
       "require": "./dist/panda.json"
     }
   },
+  "typesVersions": {
+    "*": {
+      "preset": [
+        "dist/preset"
+      ]
+    }
+  },
   "files": [
     "dist"
   ],
@@ -26,13 +33,14 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "reset": "rimraf node_modules && rimraf dist",
+    "clean": "rimraf node_modules && rimraf dist",
     "codegen": "panda codegen --clean",
-    "build": "npm run build:preset && npm run build:component",
+    "build": "npm run codegen && npm run build-ship",
+    "build:all": "npm run build:preset && npm run build:component",
     "build:component": "tsc && cp src/*.astro dist",
     "build:preset": "tsup src/preset.ts --format=esm,cjs --clean --dts --external @pandacss/dev --external @my-monorepo/preset-base",
     "ship": "panda ship src/**/*.astro --outfile dist/panda.json",
-    "build-ship": "npm run build && npm run ship"
+    "build-ship": "npm run build:all && npm run ship"
   },
   "dependencies": {
     "@my-monorepo/preset-base": "^0.0.1"

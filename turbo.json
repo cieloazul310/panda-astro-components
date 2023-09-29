@@ -1,22 +1,11 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "build:preset-base": {
-      "dependsOn": ["^build:preset-base"]
-    },
-    "codegen": {
-      "dependsOn": ["build:preset-base"],
-      "outputs": ["node_modules"]
-    },
-    "build-ship": {
-      "dependsOn": ["codegen"],
+    "build": {
+      "dependsOn": ["^build"],
       "inputs": ["src"],
-      "outputs": ["dist"]
+      "outputs": ["node_modules", "dist"]
     },
-    "build:core": {
-      "dependsOn": ["build-ship"],
-      "inputs": ["src"],
-      "outputs": ["dist"]
-    }
+    "clean": {}
   }
 }

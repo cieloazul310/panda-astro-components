@@ -21,11 +21,12 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "reset": "rimraf node_modules && rimraf dist",
-    "build": "tsc && cp src/*.astro dist",
+    "clean": "rimraf node_modules && rimraf dist",
+    "build": "npm run codegen && npm run build-ship",
+    "build:package": "tsc && cp src/*.astro dist",
     "codegen": "panda codegen --clean",
     "ship": "panda ship src/**/*.astro --outfile dist/panda.json",
-    "build-ship": "npm run build && npm run ship"
+    "build-ship": "npm run build:package && npm run ship"
   },
   "dependencies": {
     "@my-monorepo/preset-base": "^0.0.1"
