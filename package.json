@@ -7,8 +7,8 @@
   ],
   "scripts": {
     "turbo": "turbo",
-    "build": "turbo run build",
-    "clean": "turbo run clean",
+    "build": "turbo run build --filter='./packages/*'",
+    "clean": "turbo run clean && rimraf */**/.turbo",
     "format": "prettier \"{apps,packages}/**/*.{js,cjs,ts,astro}\" --write",
     "lint-staged": "lint-staged",
     "prepare": "git config --local core.hooksPath .githooks"
