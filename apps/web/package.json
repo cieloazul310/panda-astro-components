@@ -9,8 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "panda": "panda",
-    "prepare": "panda codegen --clean"
+    "panda": "panda"
   },
   "dependencies": {
     "@my-monorepo/core": "^0.0.1",

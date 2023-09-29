@@ -25,8 +25,7 @@
     "build": "tsc && cp src/*.astro dist",
     "codegen": "panda codegen --clean",
     "ship": "panda ship src/**/*.astro --outfile dist/panda.json",
-    "build-ship": "npm run build && npm run ship",
-    "prepare": "npm run codegen && npm run build && npm run ship"
+    "build-ship": "npm run build && npm run ship"
   },
   "dependencies": {
     "@my-monorepo/preset-base": "^0.0.1"
