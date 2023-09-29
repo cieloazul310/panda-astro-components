@@ -71,6 +71,10 @@ jobs:
       - name: Build packages
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
 
+      - name: App Codegen
+        run: ${{ steps.detect-package-manager.outputs.manager }} run panda codegen
+        working-directory: ${{ env.BUILD_PATH }}
+
       - name: Build with Astro
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} astro build \
