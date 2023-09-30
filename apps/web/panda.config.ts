@@ -1,4 +1,3 @@
-// import * as path from "path";
 import { defineConfig } from "@pandacss/dev";
 import preset from "@my-monorepo/core/preset";
 import ship from "@my-monorepo/core/ship";
