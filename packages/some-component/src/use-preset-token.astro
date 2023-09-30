@@ -1,14 +1,18 @@
 ---
 import { css } from "@my-monorepo/ui-lib/css";
+
+interface Props {
+  title?: string;
+}
+const { title } = Astro.props;
 ---
 
 <div
   class={css({
-    bg: "shadcn.muted",
-    color: "shadcn.primary",
+    layerStyle: "box",
     p: 8,
-    rounded: "xl",
   })}
 >
+  {title && <h2 class={css({ textStyle: "headings" })}>{title}</h2>}
   <slot />
 </div>
