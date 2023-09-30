@@ -1,26 +1,13 @@
 import { defineConfig } from "@pandacss/dev";
 import preset from "@my-monorepo/core/preset";
+import ship from "@my-monorepo/core/ship";
 
 export default defineConfig({
   presets: ["@pandacss/preset-panda", preset],
   // Whether to use css reset
   preflight: true,
   // Where to look for your css declarations
-  include: [
-    "./src/**/*.{ts,astro}",
-    // if you remove this one, the `SomeComponent` styles will be missing in the final css
-    // "./*/**/node_modules/@my-monorepo/some-component/dist/panda.json",
-    // "./*/**/node_modules/@my-monorepo/button/dist/panda.json",
-    // this one is unnecessary since no `css` function (or style props etc) is directly used in this package
-    // but including it should not hurt and would make it future-proof
-    // "*/**/node_modules/@my-monorepo/button/dist/panda.json",
-    // monorepo
-    // "../../packages/some-component/dist/panda.json",
-    // "../../packages/button/dist/panda.json",
-    // ...ship,
-    require.resolve("@my-monorepo/button/panda.json"),
-    require.resolve("@my-monorepo/some-component/panda.json"),
-  ],
+  include: ["./src/**/*.{ts,astro}", ...ship],
 
   // Files to exclude
   exclude: [],

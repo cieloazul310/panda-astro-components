@@ -3,7 +3,10 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["src"],
+      "outputs": ["node_modules", "dist"]
+    },
+    "dev": {
+      "dependsOn": ["^dev"],
       "outputs": ["node_modules", "dist"]
     },
     "clean": {}

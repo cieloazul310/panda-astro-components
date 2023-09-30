@@ -5,9 +5,10 @@ generated from [astahmer/panda-monorepo](https://github.com/astahmer/panda-monor
 ```md
 my-monorepo
 ├─ apps
-│  └─ web <-- consuming the `preset`, `button`, `some-component`, etc packages
+│  └─ web <-- consuming the `core`, which includes all packages
 └─ packages
-   ├─ preset <-- using definePreset(), contains the theme base (tokens.colors, semantic tokens, etc)
+   ├─ preset-base <-- using definePreset(), contains the theme base (tokens.colors, semantic tokens, etc)
    ├─ button <-- consuming the preset, provides a button recipe (in a buttonPreset)
-   └─ some-component <-- consuming the preset, provides a component using internal `css` calls, ships a panda.json extract result
+   ├─ some-component <-- consuming the preset, provides a component using internal `css` calls, ships a panda.json extract result
+   └─ `core` <-- core package including all above packages.
 ```

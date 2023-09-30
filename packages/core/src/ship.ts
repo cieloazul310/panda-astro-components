@@ -1,6 +1,10 @@
+import * as path from "path";
+
 const ship = [
-  require.resolve("@my-monorepo/some-component/panda.json"),
-  require.resolve("@my-monorepo/button/panda.json"),
-];
+  "@my-monorepo/some-component/components",
+  "@my-monorepo/button/components",
+].map((components) =>
+  path.resolve(path.dirname(require.resolve(components)), "*.astro"),
+);
 
 export default ship;

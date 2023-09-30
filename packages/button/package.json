@@ -2,21 +2,22 @@
   "name": "@my-monorepo/button",
   "version": "0.0.1",
   "description": "",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./components": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
     },
     "./preset": {
       "types": "./dist/preset.d.ts",
-      "import": "./dist/preset.mjs",
-      "require": "./dist/preset.js"
-    },
-    "./panda.json": {
-      "import": "./dist/panda.json",
-      "require": "./dist/panda.json"
+      "import": "./dist/preset.js",
+      "require": "./dist/preset.cjs"
     }
   },
   "typesVersions": {
@@ -27,20 +28,22 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "src/index.ts",
+    "src/*.astro"
   ],
   "keywords": [],
   "author": "",
   "license": "ISC",
   "scripts": {
     "clean": "rimraf node_modules && rimraf dist",
-    "codegen": "panda codegen --clean",
-    "build": "npm run codegen && npm run build-ship",
-    "build:all": "npm run build:preset && npm run build:component",
-    "build:component": "tsc && cp src/*.astro dist",
-    "build:preset": "tsup src/preset.ts --format=esm,cjs --clean --dts --external @pandacss/dev --external @my-monorepo/preset-base",
-    "ship": "panda ship src/**/*.astro --outfile dist/panda.json",
-    "build-ship": "npm run build:all && npm run ship"
+    "codegen": "panda --clean",
+    "dev": "npm-run-all --parallel dev:preset dev:panda",
+    "dev:panda": "panda --watch",
+    "dev:preset": "npm run tsup -- --watch",
+    "build": "npm run codegen && npm run build:preset",
+    "build:preset": "npm run tsup -- --clean",
+    "tsup": "tsup src/preset.ts --format=esm,cjs --dts --external @pandacss/dev --external @my-monorepo/preset-base"
   },
   "dependencies": {
     "@my-monorepo/preset-base": "^0.0.1"
