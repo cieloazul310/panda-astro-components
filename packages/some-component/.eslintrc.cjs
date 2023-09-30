@@ -3,7 +3,7 @@ module.exports = {
   extends: ["custom"],
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: "./tsconfig.eslint.json",
+    project: "./tsconfig.json",
   },
   ignorePatterns: ["dist"],
   overrides: [

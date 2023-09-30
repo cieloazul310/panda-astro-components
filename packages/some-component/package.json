@@ -2,34 +2,31 @@
   "name": "@my-monorepo/some-component",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "import": "./src/index.ts",
+      "types": "./src/index.ts"
     },
-    "./panda.json": {
-      "import": "./dist/panda.json",
-      "require": "./dist/panda.json"
+    "./components": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts"
     }
   },
   "files": [
-    "dist"
+    "src"
   ],
   "keywords": [],
   "author": "",
   "license": "ISC",
   "scripts": {
-    "clean": "rimraf node_modules && rimraf dist",
-    "build": "npm run codegen && npm run build-ship",
-    "dev": "npm-run-all --parallel dev:panda dev:package",
+    "clean": "rimraf node_modules",
+    "build": "npm run codegen",
+    "dev": "npm-run-all --parallel dev:panda",
     "dev:panda": "panda --watch",
-    "dev:package": "cp src/*.astro dist && tsc --watch",
-    "build:package": "tsc && cp src/*.astro dist",
-    "codegen": "panda --clean",
-    "ship": "panda ship src/**/*.astro --outfile dist/panda.json",
-    "build-ship": "npm run build:package && npm run ship"
+    "codegen": "panda --clean"
   },
   "dependencies": {
     "@my-monorepo/preset-base": "^0.0.1"
