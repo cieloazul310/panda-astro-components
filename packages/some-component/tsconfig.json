@@ -1,4 +1,4 @@
 {
   "extends": "@my-monorepo/tsconfig/astro",
-  "include": ["src", ".eslintrc.cjs"]
+  "include": ["src", ".eslintrc.cjs", "panda.config.ts"]
 }
