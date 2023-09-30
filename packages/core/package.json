@@ -24,6 +24,10 @@
     "dist"
   ],
   "scripts": {
+    "dev": "npm-run-all --parallel dev:index dev:ship dev:preset",
+    "dev:index": "tsc --watch",
+    "dev:ship": "npm run build:ship -- --watch",
+    "dev:preset": "npm run build:preset -- --watch",
     "build": "npm run build:preset && npm run build:index && npm run build:ship",
     "build:index": "tsc",
     "build:ship": "tsup src/ship.ts --format=cjs --dts",

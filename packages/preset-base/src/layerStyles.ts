@@ -6,8 +6,7 @@ const layerStyles = defineLayerStyles({
     description: "Box with border right and bottom",
     value: {
       bg: "shadcn.background",
-      borderRightWidth: "4px",
-      borderBottomWidth: "4px",
+      borderWidth: "1px 4px 4px 1px",
       borderColor: "shadcn.primary",
       color: "shadcn.primary",
     },

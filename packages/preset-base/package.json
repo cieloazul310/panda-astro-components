@@ -19,7 +19,9 @@
   "license": "ISC",
   "scripts": {
     "clean": "rimraf node_modules && rimraf dist",
-    "build": "tsup src/index.ts --dts --format=esm,cjs --clean --dts --external @pandacss/dev"
+    "tsup": "tsup src/index.ts --dts --format=esm,cjs --external @pandacss/dev",
+    "build": "npm run tsup -- --clean",
+    "dev": "npm run tsup -- --watch"
   },
   "devDependencies": {
     "@my-monorepo/tsconfig": "^0.0.1",

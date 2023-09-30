@@ -23,8 +23,11 @@
   "scripts": {
     "clean": "rimraf node_modules && rimraf dist",
     "build": "npm run codegen && npm run build-ship",
+    "dev": "npm-run-all --parallel dev:panda dev:package",
+    "dev:panda": "panda --watch",
+    "dev:package": "cp src/*.astro dist && tsc --watch",
     "build:package": "tsc && cp src/*.astro dist",
-    "codegen": "panda codegen --clean",
+    "codegen": "panda --clean",
     "ship": "panda ship src/**/*.astro --outfile dist/panda.json",
     "build-ship": "npm run build:package && npm run ship"
   },

@@ -34,11 +34,16 @@
   "license": "ISC",
   "scripts": {
     "clean": "rimraf node_modules && rimraf dist",
-    "codegen": "panda codegen --clean",
+    "codegen": "panda --clean",
+    "dev": "npm-run-all --parallel dev:preset dev:panda dev:component",
+    "dev:panda": "panda --watch",
+    "dev:preset": "npm run tsup -- --watch",
+    "dev:component": "cp src/*.astro dist && tsc --watch",
     "build": "npm run codegen && npm run build-ship",
     "build:all": "npm run build:preset && npm run build:component",
     "build:component": "tsc && cp src/*.astro dist",
-    "build:preset": "tsup src/preset.ts --format=esm,cjs --clean --dts --external @pandacss/dev --external @my-monorepo/preset-base",
+    "build:preset": "npm run tsup -- --clean",
+    "tsup": "tsup src/preset.ts --format=esm,cjs --dts --external @pandacss/dev --external @my-monorepo/preset-base",
     "ship": "panda ship src/**/*.astro --outfile dist/panda.json",
     "build-ship": "npm run build:all && npm run ship"
   },
