@@ -1,11 +1,4 @@
 {
   "extends": "@my-monorepo/tsconfig/astro",
-  "compilerOptions": {
-    "outDir": "dist",
-    "declaration": true,
-    "allowImportingTsExtensions": false,
-    "noEmit": false,
-    "types": ["../../types.d.ts"]
-  },
-  "include": ["src"]
+  "include": ["src", ".eslintrc.cjs"]
 }
