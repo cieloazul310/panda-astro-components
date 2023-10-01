@@ -43,8 +43,12 @@
   },
   "devDependencies": {
     "@my-monorepo/tsconfig": "^0.0.1",
-    "@pandacss/dev": "^0.15.3",
+    "@pandacss/dev": "^0.15.4",
     "eslint": "^8.50.0",
     "eslint-config-custom": "^0.0.1"
+  },
+  "peerDependencies": {
+    "@pandacss/dev": ">=0.15.0",
+    "astro": ">=3.0.0"
   }
 }

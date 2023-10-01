@@ -14,12 +14,12 @@
   },
   "dependencies": {
     "@my-monorepo/core": "^0.0.1",
-    "astro": "^3.1.4"
+    "astro": "^3.2.0"
   },
   "devDependencies": {
     "@my-monorepo/tsconfig": "^0.0.1",
-    "@pandacss/astro": "^0.15.3",
-    "@pandacss/dev": "^0.15.3",
+    "@pandacss/astro": "^0.15.4",
+    "@pandacss/dev": "^0.15.4",
     "eslint": "^8.50.0",
     "eslint-config-custom": "^0.0.1",
     "typescript": "^5.2.2"
